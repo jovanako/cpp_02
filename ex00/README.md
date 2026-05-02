@@ -1,5 +1,23 @@
 - Discovering a new number type - fixed-point numbers
+	- Problem: floating-point numbers can be unpredictable in terms of
+		precision and performance in specific fields like computer
+		graphics or sound processing.
+	- Solution: fixed-point numbers provide a balanced middle ground
+		between performance and accuracy. You will represent a decimal number using an integer by 'fixing' the position of the decimal
+		point.
 
+- The Orthodox Canonical Form
+	Starting with this exercise, all your C++ classes must implement four
+	specific member functions to ensure they behave correctly during object
+	creation and assignment.
+	(1) DEFAULT CONSTRUTOR
+		initializes the fixed-point value to 0
+	(2) COPY CONSTRUCTOR
+		creates a new object as a copy of an existing one
+	(3) COPY ASSIGNMENT OPERATOR
+		sets an existing object's value to that of another existing object
+	(4) DESTRUCTOR
+		handles the 'cleanup' when an object is destroyed
 
 Implementation breakdown:
 
