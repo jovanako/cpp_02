@@ -6,29 +6,36 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 20:28:10 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/05/02 09:50:25 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/05/02 11:50:54 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 	private:
 		int _value;
 		static const int _bits = 8;
 	public:
-		Fixed();    // default constructor
+		// default constructor
+		Fixed();
 
-		Fixed(const Fixed &other);    // copy constructor
+		// copy constructor
+		Fixed(const Fixed & other);
 
-		Fixed & operator=(const Fixed &other);    // assignment operator
+		// copy assignment operator
+		Fixed & operator=(const Fixed & other);
 		
-		Fixed(const int value);
+		// int constructor
+		Fixed(const int n);
 
-		Fixed(const float value);
+		// float constructor
+		Fixed(const float f);
 
+		// destructor
 		~Fixed();
 
 		int getRawBits(void) const;

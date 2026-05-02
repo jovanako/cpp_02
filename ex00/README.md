@@ -19,6 +19,16 @@
 	(4) DESTRUCTOR
 		handles the 'cleanup' when an object is destroyed
 
+
+COPY ASSIGNMENT OPERATOR
+
+*	A copy assignment operator is a non-template non-static member function
+	with the name "operator=" that can be called with an argument of the same class type and copies the content of the argument without mutating the argument.
+
+*	SYNTAX: return-type operator=(parameter-list);
+			->	declaration of a copy assignment operator inside of class
+				definition
+
 Implementation breakdown:
 
 1.	Class structure
@@ -28,13 +38,25 @@ Implementation breakdown:
 *	Encapsulation: the raw value and the bit constant are placed in the
 	private section
 
-2.	Orthodox Canonical Form Implementation
+2.	ORTHODOX CANONICAL FORM Implementation
 
-*	Default constructor: initializes _value to 0 and prints message
-*	Copy constructor: fetching the value with other.getRawBits so that
-	the log message appears
-*	Assignment operator: self-assignment check, to prevent issues if an
-	object is assigned to itself
+*	Default constructor: initializes an object to a valid default state
+						 when no arguments are provided. In Fixed, this
+						 initializes the fixed-point value to 0.
+
+*	Copy constructor: used to create a new object as a direct copy of an
+					  existing object. It ensures that when you pass an
+					  object by value or create a duplicate, the data is
+					  copied directly.
+
+*	Copy Assignment operator: used to copy data from one already existing
+							  object to another already existing object.
+							  It allows the = sign to work between two
+							  objects of your class.
+
+*	Destructor: cleans up an object when it goes out of scope or is
+				deleted. This is where you free any dynamically allocated
+				memory to prevent leaks. 
 
 3.	Member functions
 

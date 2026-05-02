@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 13:56:02 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/05/02 09:51:18 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/05/02 11:50:28 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@ class Fixed {
 		int _value;
 		static const int _bits = 8;
 	public:
-		Fixed();    // default constructor
+		// default constructor
+		Fixed();
 		
-		Fixed(const Fixed &other);    // copy constructor
+		// copy constructor
+		Fixed(const Fixed & other);
 		
-		Fixed & operator=(const Fixed &other);    // assignment operator
+		// copy assignment operator
+		Fixed & operator=(const Fixed & other);
 
-		~Fixed();    // destructor
+		// destructor
+		~Fixed();
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
